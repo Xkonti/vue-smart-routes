@@ -1,3 +1,3 @@
-# Simple TS npm package template
+# Smart routes for Vue Router
 
-This is a **very** simple template for creating npm packages using typescript.
+A safer way to manage your routes in Vue Router.
