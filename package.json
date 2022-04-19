@@ -1,7 +1,7 @@
 {
-  "name": "simple-typescript-npm-package",
-  "version": "1.0.0",
-  "description": "A very simple template for creating npm packages",
+  "name": "vue-smart-routes",
+  "version": "0.1.0",
+  "description": "A safer way to manage your routes in Vue Router",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,13 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xkonti/simple-typescript-npm-package"
+    "url": "git+https://github.com/Xkonti/vue-smart-routes"
   },
-  "keywords": ["typescript", "npm", "package", "template"],
+  "keywords": ["vue", "router", "routes", "types"],
   "author": "Beniamin (Xkonti) Dudek <xkonti@xkonti.tech>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Xkonti/simple-typescript-npm-package/issues"
+    "url": "https://github.com/Xkonti/vue-smart-routes/issues"
   },
-  "homepage": "https://github.com/Xkonti/simple-typescript-npm-package#readme"
+  "homepage": "https://github.com/Xkonti/vue-smart-routes#readme",
+  "dependencies": {
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.17.0"
+  }
 }
