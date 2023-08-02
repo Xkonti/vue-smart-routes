@@ -1,6 +1,5 @@
 import { test, expect } from 'vitest';
 import {RouteTarget} from './route-target.ts';
-import {RouteRecordRaw} from 'vue-router';
 import {processRoutes} from './route-processor.ts';
 
 function getMockComponent() {
@@ -17,7 +16,7 @@ function getMockRoutes() {
   };
 
   // Setup routing tree
-  const routingTree: RouteRecordRaw[] = [
+  const routingTree = [
     {
       path: '/',
       component: () => getMockComponent(),
