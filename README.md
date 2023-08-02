@@ -14,7 +14,7 @@ export const routes = {
 
 Usage in and outside Vue components:
 
-``ts
+```ts
 routes.home.go();
 ````
 
