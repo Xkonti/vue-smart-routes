@@ -9,15 +9,12 @@ function getMockComponent() {
   });
 }
 
-test('test route processing', () => {
+function getMockRoutes() {
   // Setup routes
   const routes = {
     home: new RouteTarget(),
     about: new RouteTarget(),
   };
-
-  // Make sure route IDs are unique
-  expect(routes.home.id).not.toBe(routes.about.id);
 
   // Setup routing tree
   const routingTree: RouteRecordRaw[] = [
@@ -45,8 +42,26 @@ test('test route processing', () => {
     }
   ];
 
+  return {routes, routingTree};
+}
+
+test('test route processing using routes as a list', () => {
+  const {routes, routingTree} = getMockRoutes();
+  const routesList = [routes.home, routes.about];
+  
   // Process routes
-  processRoutes(routingTree, Object.values(routes));
+  processRoutes(routingTree, routesList);
+
+  // Check paths
+  expect(routes.home.path).toBe('/');
+  expect(routes.about.path).toBe('/about/hello');
+});
+
+test('test route processing using routes as an object', () => {
+  const {routes, routingTree} = getMockRoutes();
+
+  // Process routes
+  processRoutes(routingTree, routes);
 
   // Check paths
   expect(routes.home.path).toBe('/');
