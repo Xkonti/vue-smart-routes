@@ -11,8 +11,17 @@ function concatRoutePath (path: string | null, extension: string): string {
   return path + '/' + extension;
 }
 
-export function processRoutes (routesTree: RouteRecordRaw[], routeTargets: RouteTarget[], prefix: string | null = null) {
+export function processRoutes (
+  routesTree: RouteRecordRaw[],
+  routeTargets: RouteTarget[] | {[key: string]: RouteTarget},
+  prefix: string | null = null
+) {
   for (const route of routesTree) {
+    // Extract route targets if passed as an object
+    if (!(routeTargets instanceof Array)) {
+      routeTargets = Object.values(routeTargets);
+    }
+
     // Update route path and route target path
     const matchingTarget = routeTargets.find(target => target.id === route.path);
     if (matchingTarget) {
